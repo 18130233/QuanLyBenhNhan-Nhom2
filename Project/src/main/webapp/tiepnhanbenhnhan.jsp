@@ -31,14 +31,9 @@
                             <div class="col-md-4">
                                 Mã bệnh nhân</div>
                             <div class="col-md-4"> <input type="text" size="40px" name="id" placeholder="Nhập mã bệnh nhân"></div>
-                            <div class="col-md-2"> </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-4">
-                                Mã BHYT</div>
-                            <div class="col-md-4"> <input type="text" size="40px" name="id" placeholder="Nhập mã bệnh nhân"></div>
-                            <div class="col-md-2"> </div>
+                            <div class="col-md-2">
+                                <button class=""> Kiểm tra </button>
+                            </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-2"></div>
@@ -72,7 +67,7 @@
                         <div class="row mt-2">
                             <div class="col-md-2"></div>
                             <div class="col-md-4">
-                                Khoa cần khám</div>
+                                Phòng khám</div>
                             <div class="col-md-4"> <select Name="assign" Size="Number_of_options">  
                                 <option value="Ngoai"> Ngoại khoa </option>  
                                 <option value="Noi"> Nội khoa </option>  
