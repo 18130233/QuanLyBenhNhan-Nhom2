@@ -100,7 +100,10 @@
                     
         
                 </div>
-                <div class="column__right-frames1-2">
+                <div class="column__right-frames1-2" >
+                    <button class="inhoadon">In Hóa Đơn <i class="fas fa-download fa-3x"></i></button>
+                </div>
+                <!-- <div class="column__right-frames1-2">
                     <label for="">Dấu hiệu sinh tồn</label>
                     <div class="frames1-2-row1" >
                         <label for="">Huyết áp</label>
@@ -130,7 +133,7 @@
                 
                     
 
-                </div>
+                </div> -->
             </div>
             <div class="column__right-frames2">
                 <table>
