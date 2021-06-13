@@ -1,4 +1,3 @@
-CREATE DATABASE CNPMNHOM2;
 
 CREATE TABLE BacSi(
  maBacSi varchar(10),
@@ -12,13 +11,16 @@ CREATE TABLE PhongKham(
  PRIMARY KEY( maPhongKham)
 );
 CREATE TABLE CTPhongKham(
- maCTPhongKham varchar(10),
- maPhongKham varchar(10) FOREIGN KEY REFERENCES PhongKham(maPhongKham),
- maBacSi varchar(10) FOREIGN KEY REFERENCES BacSi(maBacSi),
+ maCTPhongKham varchar(10) PRIMARY KEY,
+ maPhongKham varchar(10),
+ FOREIGN KEY (maPhongKham) REFERENCES PhongKham(maPhongKham),
+ maBacSi varchar(10),
+ FOREIGN KEY (maBacSi) REFERENCES BacSi(maBacSi),
  gioTruc float,
- hetCaTruc float,
- PRIMARY KEY( maCTPhongKham)
+ hetCaTruc float
+
 );
+
 CREATE TABLE BenhNhan(
  maBenhNhan varchar(50) not null,
  tenBenhNhan nvarchar(100) not null,
@@ -26,6 +28,22 @@ CREATE TABLE BenhNhan(
  dienThoai varchar(10),
  PRIMARY KEY( maBenhNhan)
 );
+
+CREATE TABLE HangDoi(
+ maHangDoi varchar(10),
+ maPhongKham varchar(10),
+ PRIMARY KEY( maHangDoi)
+);
+
+
+CREATE TABLE CTHangDoi(
+ maHangDoi varchar(10),
+ maBenhNhan varchar(50),
+ stt int,
+ PRIMARY KEY( maHangDoi, maBenhNhan)
+);
+
+
 CREATE TABLE ChiSo(
  maBenhNhan varchar(50),
  huyetAp int,
@@ -51,7 +69,8 @@ CREATE TABLE HoaDonThuoc(
  PRIMARY KEY( maHDThuoc)
 );
 CREATE TABLE ChiTietThuoc(
- maHDThuoc varchar(10) FOREIGN KEY REFERENCES HoaDonThuoc(maHDThuoc),
+ maHDThuoc varchar(10),
+ FOREIGN KEY (maHDThuoc) REFERENCES HoaDonThuoc(maHDThuoc),
  maThuoc varchar(10),
  soLuong int,
  PRIMARY KEY( maHDThuoc, maThuoc)
@@ -70,8 +89,10 @@ CREATE TABLE HoaDonDichVu(
  PRIMARY KEY( maHDDichVu)
 );
 CREATE TABLE ChiTietDichVu(
- maHDDichVu varchar(10) FOREIGN KEY REFERENCES HoaDonDichVu(maHDDichVu),
- maDichVu varchar(10) FOREIGN KEY REFERENCES DichVu(maDichVu),
+ maHDDichVu varchar(10) ,
+ FOREIGN KEY (maHDDichVu) REFERENCES HoaDonDichVu(maHDDichVu),
+ maDichVu varchar(10) ,
+ FOREIGN KEY (maDichVu) REFERENCES DichVu(maDichVu),
  soLuong int,
  ketQua nvarchar(100),
  PRIMARY KEY( maHDDichVu, maDichVu)
@@ -79,14 +100,18 @@ CREATE TABLE ChiTietDichVu(
 
 
 CREATE TABLE KhamBenh(
- maBenhNhan varchar(50) FOREIGN KEY REFERENCES BenhNhan(maBenhNhan),
+ maBenhNhan varchar(50),
+ FOREIGN KEY (maBenhNhan) REFERENCES BenhNhan(maBenhNhan),
  maKhamBenh varchar(10) ,
- maCTPhongKham varchar(10) FOREIGN KEY REFERENCES CTPhongKham(maCTPhongKham),
+ maCTPhongKham varchar(10),
+ FOREIGN KEY (maCTPhongKham) REFERENCES CTPhongKham(maCTPhongKham),
  trieuChung nvarchar(100),
  chuanDoan nvarchar(100),
  tienSu nvarchar(100),
  maHDDichVu varchar(10),
- maHDThuoc varchar(10) FOREIGN KEY REFERENCES HoaDonThuoc(maHDThuoc),
+ maHDThuoc varchar(10),
+ FOREIGN KEY (maHDThuoc) REFERENCES HoaDonThuoc(maHDThuoc),
+ maHangDoi varchar(10),
  PRIMARY KEY( maKhamBenh)
 );
 CREATE TABLE HoaDon(
