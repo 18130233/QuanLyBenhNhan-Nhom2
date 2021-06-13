@@ -7,11 +7,11 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "ThanhToanController", value = "/ThanhToanController")
+@WebServlet(name = "ThanhToanController", urlPatterns = "/ThanhToanController")
 public class ThanhToanController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("thanhtoan.jsp").forward(request,response);
     }
 
     @Override

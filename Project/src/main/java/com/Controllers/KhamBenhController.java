@@ -8,11 +8,11 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "KhamBenhController", value = "/KhamBenhController")
+@WebServlet(name = "KhamBenhController", urlPatterns = "/KhamBenhController")
 public class KhamBenhController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("khambenh.jsp").forward(request,response);
     }
 
     @Override

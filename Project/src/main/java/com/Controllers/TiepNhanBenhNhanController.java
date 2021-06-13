@@ -11,7 +11,7 @@ import java.io.IOException;
 public class TiepNhanBenhNhanController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("tiepnhanbenhnhan.jsp").forward(request,response);
     }
 
     @Override

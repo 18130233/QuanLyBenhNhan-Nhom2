@@ -22,19 +22,26 @@
        
                 <div class="row">
                     <div class="col-md-4">
+                        <form method="get" action="TiepNhanBenhNhanController">
                         <button class="btn">Tiếp nhận bệnh nhân</button>
+                        </form>
                     </div>
                     <div class="col-md-4">
-                        <button class="btn">Khám bệnh</button>
+                        <form method="get" action="KhamBenhController">
+                            <button class="btn">Khám bệnh</button>
+                        </form>
                     </div>
                     <div class="col-md-4">
-                        <button class="btn">Thanh toán</button>
+                        <form method="get" action="ThanhToanController">
+                            <button class="btn">Thanh Toán</button>
+                        </form>
                     </div>
 
                 </div>
             </div>
             <!-- /.container -->
             <!-- /.banner-content -->
+        </div>
     </section>
 
 </body>
