@@ -3,19 +3,19 @@ package com.Models;
 import java.util.ArrayList;
 
 public class BenhNhan {
-    String maBenhNhan;
-    String tenBenhNhan;
-    Date ngayKham;
-    String diaChi;
-    String dienThoai;
-    String chuanDoan;
-    String trieuChung;
-    String tienSu;
-    ChiSo dauHieuSinhTon;
-    ArrayList<Thuoc> danhSachThuoc;
-    ArrayList<DichVu> danhSachDichVu;
-    boolean thanhToan;
-    PhongKham phongKham;
+    private String maBenhNhan;
+    private String tenBenhNhan;
+    private Date ngayKham;
+    private String diaChi;
+    private String dienThoai;
+    private String chuanDoan;
+    private String trieuChung;
+    private String tienSu;
+    private ChiSo dauHieuSinhTon;
+    private ArrayList<Thuoc> danhSachThuoc;
+    private ArrayList<DichVu> danhSachDichVu;
+    private boolean thanhToan;
+    private PhongKham phongKham;
 
     public BenhNhan(String maBenhNhan, String tenBenhNhan, Date ngayKham, String diaChi, String dienThoai, String chuanDoan, String trieuChung, String tienSu, ChiSo dauHieuSinhTon, PhongKham phongKham) {
         this.danhSachThuoc = new ArrayList<>();
@@ -33,7 +33,19 @@ public class BenhNhan {
         this.phongKham = phongKham;
     }
     public BenhNhan(){
-
+        this.danhSachThuoc = new ArrayList<>();
+        this.danhSachDichVu = new ArrayList<>();
+        this.thanhToan = false;
+        this.maBenhNhan = "";
+        this.tenBenhNhan = "";
+        this.ngayKham = new Date();
+        this.diaChi = "";
+        this.dienThoai = "";
+        this.chuanDoan = "";
+        this.trieuChung = "";
+        this.tienSu = "";
+        this.dauHieuSinhTon = new ChiSo();
+        this.phongKham = new PhongKham();
     }
     //main function and method
 
@@ -146,6 +158,26 @@ public class BenhNhan {
 
     public void setPhongKham(PhongKham phongKham) {
         this.phongKham = phongKham;
+    }
+
+
+    @Override
+    public String toString() {
+        return "BenhNhan{" +
+                "maBenhNhan='" + maBenhNhan + '\'' +
+                ", tenBenhNhan='" + tenBenhNhan + '\'' +
+                ", ngayKham=" + ngayKham +
+                ", diaChi='" + diaChi + '\'' +
+                ", dienThoai='" + dienThoai + '\'' +
+                ", chuanDoan='" + chuanDoan + '\'' +
+                ", trieuChung='" + trieuChung + '\'' +
+                ", tienSu='" + tienSu + '\'' +
+                ", dauHieuSinhTon=" + dauHieuSinhTon +
+                ", danhSachThuoc=" + danhSachThuoc +
+                ", danhSachDichVu=" + danhSachDichVu +
+                ", thanhToan=" + thanhToan +
+                ", phongKham=" + phongKham +
+                '}';
     }
 }
 

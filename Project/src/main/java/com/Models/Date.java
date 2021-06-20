@@ -11,6 +11,9 @@ public class Date {
         this.nam = nam;
     }
 
+    public Date() {
+    }
+
     public int getNgay() {
         return ngay;
     }
@@ -34,4 +37,16 @@ public class Date {
     public void setNam(int nam) {
         this.nam = nam;
     }
+
+    public String getStringDate() {
+        return this.nam + "-" + this.thang + "-" + this.ngay;
+    }
+
+    public void setStringDate(String date) {
+        this.nam = Integer.parseInt(date.substring(0, 4));//chỉ lay dau k lay cuoi
+        this.thang = Integer.parseInt(date.substring(5, 7));
+        this.ngay = Integer.parseInt(date.substring(8));
+    }
+
+
 }

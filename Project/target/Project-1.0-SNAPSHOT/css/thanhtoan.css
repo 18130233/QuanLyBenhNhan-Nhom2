@@ -17,7 +17,7 @@ body {
 
 header {
   background-color: royalblue;
-  width: 99%;
+  width: 100%;
   height: 30px;
 }
 
@@ -162,18 +162,6 @@ header {
   height: 100%;
 }
 
-.container .column__right .column__right-frames1 .column__right-frames1-2 .btnHistorypatient {
-  width: 100%;
-  height: 100px;
-  background-color: #44bfef;
-  cursor: pointer;
-}
-
-.container .column__right .column__right-frames1 .column__right-frames1-2 .btnHistorypatient {
-  height: 100px;
-  width: 100%;
-}
-
 .container .column__right .column__right-frames1 .column__right-frames1-2 .frames1-2-row1 {
   padding-top: 10px;
 }
@@ -240,7 +228,7 @@ header {
   height: 100%;
   width: 100%;
   cursor: pointer;
-  background-color: #44bfef;
+  background-color: darkcyan;
 }
 
 .container .column__right .column__right-frames4 .frames4-2 .frames4-2-row1 {

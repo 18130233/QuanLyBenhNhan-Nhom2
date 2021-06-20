@@ -6,17 +6,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/khambenh.css">
+    <link rel="stylesheet" href="./css/thanhtoan.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <title>Document</title>
     
 </head>
 <body>
-<header class="header">Màn Hình Khám bệnh</header>
+<header class="header">Màn Hình Thanh Toán</header>
     <div class="container">
         <div class="column__left">
             <div class="column__left-frames1">
-              
+                <div class="frames1-row1" >
+                    <label for="" style="margin-left: 14px;">Từ ngày</label>
+                    <input type="text">
+                    <button class="frames1-row1-button1">Tìm <i class="fas fa-search"></i></button>
+                </div>
+                <div class="frames1-row2" >
+                    <label for="">Đến ngày</label>
+                    <input type="text">
+                    <button class="frames1-row1-button1">Tìm<i class="fas fa-search"></i></button>
+                </div>
                 <div class="frames1-row3" >
                     <label for="">Tìm bn</label>
                     <input type="text" style="margin-left: 18px;">
@@ -51,7 +60,8 @@
                         <input type="text" style="width: 100px;">
                         <label for="">Ngày</label>
                         <input type="text" style="width: 150px;">
-                        
+                        <label for="">Giờ</label>
+                        <input type="text" style="width: 80px;">
                     </div>
                     <div class="column__right-frames1-1-row2">
                         <label for="">Họ và Tên</label>
@@ -90,7 +100,10 @@
                     
         
                 </div>
-                <div class="column__right-frames1-2">
+                <div class="column__right-frames1-2" >
+                    <button class="inhoadon">In Hóa Đơn <i class="fas fa-download fa-3x"></i></button>
+                </div>
+                <!-- <div class="column__right-frames1-2">
                     <label for="">Dấu hiệu sinh tồn</label>
                     <div class="frames1-2-row1" >
                         <label for="">Huyết áp</label>
@@ -120,7 +133,7 @@
                 
                     
 
-                </div>
+                </div> -->
             </div>
             <div class="column__right-frames2">
                 <table>
@@ -167,26 +180,7 @@
             </div>
             <div class="column__right-frames4">
                 <div class="frames4-1">
-                    <div class="frames4-1-row1" style="display: flex;">
-                        <div>
-                        <label for="">Lời dặn</label>
-                        <input type="text">
-                        </div>
-                        <div>
-                            <label for="">Y,Bác sĩ</label>
-                            <select id="cars">
-                                <option value="bacsi1"> BS.Minh Nghĩa</option>
-                                <option value="bacsi2">Yta.Minh Thư</option>    
-                              </select>
-                        </div>    
-                    </div>
-                    <div class="frames4-1-row2" style="margin-top: 5px;">
-                        <button>Lưu <i class="far fa-save fa-2x"></i></button>
-                        <button>Xac nhận <i class="far fa-check-circle fa-2x"></i></button>
-                        <button>In Đơn <i class="fas fa-print fa-2x"></i></button>
-                      
-                    </div>
-
+                    <Button>Cập nhật thanh toán</Button>
                 </div>
                 <div class="frames4-2">
                     <div class="frames4-2-row1" >

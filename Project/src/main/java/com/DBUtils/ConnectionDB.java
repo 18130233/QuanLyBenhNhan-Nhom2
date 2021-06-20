@@ -10,7 +10,7 @@ public class ConnectionDB {
         Connection cn = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost/";
+            String url = "jdbc:mysql://localhost:3306/";
             String nameDTB = "projectweb";
             String userName = "root";
             String pass = "";

@@ -4,6 +4,7 @@
 
     
 }
+
 html {
     font-size: 16px;
     line-height: 16px;
@@ -17,7 +18,7 @@ body {
 }
 header{
     background-color: royalblue;
-    width: 100%;
+    width: 99%;
     height: 30px;
 }
 .header{
@@ -126,9 +127,19 @@ header{
 
           }
           .column__right-frames1-2{
+              .btnHistorypatient{
+                width: 100%;
+                height: 100px;
+                background-color: #44bfef;
+                cursor: pointer;
+            }
             width: 250px;
             border: solid 2px #403b4073;
             height: 100%;
+            .btnHistorypatient{
+                height: 100px;
+                width: 100%;
+            }
             .frames1-2-row1{
                 padding-top: 10px;
              
@@ -198,7 +209,7 @@ header{
                   height: 100%;
                   width: 100%;
                   cursor: pointer;
-                  background-color: darkcyan;
+                  background-color: #44bfef;
               }
           }
           .frames4-2{
