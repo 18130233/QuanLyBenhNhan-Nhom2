@@ -20,4 +20,8 @@ public class ConnectionDB {
         }
         return cn;
     }
+
+    public static void main(String[] args) {
+        System.out.println( ConnectionDB.getConnection());
+    }
 }

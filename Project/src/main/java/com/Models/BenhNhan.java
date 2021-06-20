@@ -35,24 +35,7 @@ public class BenhNhan {
     public BenhNhan(){
         this.danhSachThuoc = new ArrayList<>();
         this.danhSachDichVu = new ArrayList<>();
-        this.thanhToan = false;
-        this.maBenhNhan = "";
-        this.tenBenhNhan = "";
-        this.ngayKham = new Date();
-        this.diaChi = "";
-        this.dienThoai = "";
-        this.chuanDoan = "";
-        this.trieuChung = "";
-        this.tienSu = "";
-        this.dauHieuSinhTon = new ChiSo();
-        this.phongKham = new PhongKham();
     }
-    //main function and method
-
-    public void updateTrieuChung(String trieuChung){
-//        Code here
-    }
-
 
 
     //Getter and setter

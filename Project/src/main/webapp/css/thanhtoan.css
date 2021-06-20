@@ -17,7 +17,7 @@ body {
 
 header {
   background-color: royalblue;
-  width: 100%;
+  width: 99%;
   height: 30px;
 }
 
@@ -228,7 +228,7 @@ header {
   height: 100%;
   width: 100%;
   cursor: pointer;
-  background-color: darkcyan;
+  background-color: #44bfef;
 }
 
 .container .column__right .column__right-frames4 .frames4-2 .frames4-2-row1 {
@@ -242,4 +242,11 @@ header {
 .container .column__right .column__right-frames4 .frames4-2 .frames4-2-row3 {
   padding-top: 10px;
 }
-/*# sourceMappingURL=style.css.map */
+
+.inhoadon {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  background-color: #44bfef;
+}
+/*# sourceMappingURL=thanhtoan.css.map */

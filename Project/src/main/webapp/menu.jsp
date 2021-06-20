@@ -28,7 +28,15 @@
                     </div>
                     <div class="col-md-4">
                         <form method="get" action="KhamBenhController">
-                            <button class="btn">Khám bệnh</button>
+                            <div class="row">
+                            <div class="col-md-4"> <select Name="phongkham" Size="Number_of_options">
+                                <option value="pk1" name="phongkham"> Ngoại khoa </option>
+                                <option value="pk2"  name="phongkham"> Nội khoa </option>
+                                <option value="pk3"  name="phongkham"> Khoa mắt </option>
+                                <option value="pk4"  name="phongkham"> Khoa răng </option>
+                            </select> </div>
+                            <button type="submit" class="btn">Khám bệnh</button>
+                            </div>
                         </form>
                     </div>
                     <div class="col-md-4">

@@ -59,8 +59,6 @@
                         <div class="col-md-4">
                             Địa chỉ
                         </div>
-                        <%--                            <div class="col-md-2"> Nam <input class="checkbox" type="radio" size="40px" name="date"> </div>--%>
-                        <%--                            <div class="col-md-2"> Nữ <input class="checkbox" type="radio" size="40px" name="date"> </div>--%>
                         <div class="col-md-4"><input type="text" size="40px" name="diaChi"
                                                      placeholder="Địa chỉ của bệnh nhân" value="<%=bn.getDiaChi()%>"></div>
                         <div class="col-md-2"></div>
@@ -69,6 +67,17 @@
                         <div class="col-md-2"></div>
                         <div class="col-md-4">
                             Số điện thoại
+                        <div class="row mt-2">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4">
+                                Phòng khám</div>
+                            <div class="col-md-4"> <select Name="assign" Size="Number_of_options">  
+                                <option value="pk1"> Ngoại khoa </option>
+                                <option value="pk2"> Nội khoa </option>
+                                <option value="pk3"> Khoa mắt </option>
+                                <option value="pk4"> Khoa răng </option>
+                              </select> </div>
+                            <div class="col-md-2"></div>
                         </div>
                         <div class="col-md-4"><input type="text" size="40px" name="sdt" placeholder="Nhập số điện thoại"
                                                      value="<%=bn.getDienThoai()%>"></div>

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,64 +30,68 @@
             <div class="column__left-frames2" >
                 <div class="frames2">
                     <table>
+                        <thead>
                         <tr>
-                          <th>Ngày khám</th>
+                          <th>Mã bệnh nhân</th>
                           <th>Họ và Tên</th>
                           <th>Tuổi</th>
                         </tr>
+                        </thead>
+
+                        <tbody>
+                        <c:forEach items="${listBenhNhan}" var="benhNhan">
                         <tr>
-                          <td>15/5/2021</td>
-                          <td>Bình Minh</td>
-                          <td>20</td>
+                          <td><a href="KhamBenhController?phongkham=${phongKham}&maBenhNhan=${benhNhan.maBenhNhan}">  ${benhNhan.maBenhNhan}</a>
+                                </td>
+                          <td>${benhNhan.tenBenhNhan}</td>
+                          <td>${benhNhan.dienThoai}</td>
                         </tr>
+                        </c:forEach>
+                        </tbody>
+
                       </table>
                 </div>
             </div>
         </div>
         <div class="column__right">
             <div class="column__right-frames1">
+
                 <div class="column__right-frames1-1">
                     <div class="column__right-frames1-1-row1">
                         <label for="">Mã bệnh nhân</label>
-                        <input type="text" style="width: 100px;">
+                        <input type="text" value="${benhNhan.maBenhNhan}" style="width: 100px;">
                         <label for="">Ngày</label>
                         <input type="text" style="width: 150px;">
                         
                     </div>
+
                     <div class="column__right-frames1-1-row2">
                         <label for="">Họ và Tên</label>
-                        <input type="text" style="width: 100px;">
-                        <label for="">Tuổi</label>
-                        <input type="text" style="width: 150px;">
-                        <label for="">Tháng</label>
-                        <input type="text" style="width: 80px;">
-                        <label for="">Cân nặng</label>
-                        <input type="text" style="width: 80px;">
+                        <input type="text" value="${benhNhan.tenBenhNhan}" style="width: 500px;">
+
                     </div>
                     <div class="column__right-frames1-1-row3">
                         <label for="">Địa chỉ</label>
-                        <input type="text" style="width: 220px;">
+                        <input type="text" value="${benhNhan.diaChi}" style="width: 220px;">
                         <label for="">Điện thoại</label>
-                        <input type="text">
+                        <input type="text" value="${benhNhan.dienThoai}">
                     </div>
                     <div class="column__right-frames1-1-row4">
-                        <label for="">Chẩn đoán 1</label>
-                        <input type="text" style="width: 200px; margin-right: 53px;">
+                        <label for="">Chẩn đoán</label>
+                        <input type="text" value="${benhNhan.chuanDoan}" style="width: 200px; margin-right: 53px;">
                         <label for="">Triệu chứng</label>
-                        <input type="text" style="width: 200px;">
-                    </div>
-                    <div class="column__right-frames1-1-row5">
-                        <label for="">Chẩn đoán 2 </label>
-                        <input type="text" style="width: 200px;margin-right: 53px;">
-                        <label for="">Triệu chứng</label>
-                        <input type="text" style="width: 200px;">
+                        <input type="text"  value="${benhNhan.trieuChung}"style="width: 200px;">
                     </div>
                     <div class="column__right-frames1-1-row6">
-                        <label for="">Chẩn đoán 3</label>
-                        <input type="text" style="width: 200px;margin-right: 85px;">
+
                         <label for="">Tiền sử</label>
-                        <input type="text" style="width: 200px;">
+                        <input type="text" style="width: 500px;">
                     </div>
+                    <div class="column__right-frames1-1-row7">
+                       <a style="" href="ThemThuocController?phongkham=${phongKham}&maKhamBenh=${maKhamBenh}&maBenhNhan=${benhNhan.maBenhNhan}"> Thêm thuốc </a>
+                        <button style="margin-left: 500px"> Lưu <i class="far fa-save fa-2x"></i></button>
+                    </div>
+
                     
         
                 </div>
@@ -132,14 +137,15 @@
                       <th>Cách dùng</th>
                       <th>Tổng</th>
                     </tr>
+                    <c:forEach items="${benhNhan.getDanhSachThuoc()}" var="thuoc">
                     <tr>
-                      <td>Paracetamol 200mg</td>
-                      <td>Viên</td>
-                      <td>4</td>
-                      <td>5000</td>
-                      <td>Điều trị đau đầu</td>
-                      <td>20000</td>
-
+                      <td>${thuoc.getTenThuoc()}</td>
+                      <td>${thuoc.getDonVi()}</td>
+                      <td>${thuoc.getSoLuong()}</td>
+                      <td>${thuoc.getGiaBan()} VNĐ</td>
+                      <td>${thuoc.getCachDung()}</td>
+                      <td>${thuoc.getTongTienThuoc()} VNĐ</td>
+                        </c:forEach>
                     </tr>
                   </table>
 
@@ -155,11 +161,11 @@
                       
                     </tr>
                     <tr>
-                      <td>1 the clinic</td>
-                      <td>Ala</td>
-                      <td>1</td>
-                      <td>200000</td>
-                      <td>200000</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
 
                     </tr>
                   </table>
@@ -180,12 +186,17 @@
                               </select>
                         </div>    
                     </div>
+
                     <div class="frames4-1-row2" style="margin-top: 5px;">
-                        <button>Lưu <i class="far fa-save fa-2x"></i></button>
-                        <button>Xac nhận <i class="far fa-check-circle fa-2x"></i></button>
+                        <form action="KhamBenhController" method="get">
+                            <input value="${phongKham}" name="phongkham" hidden>
+                        <input value="${benhNhan.maBenhNhan}" name="delete" hidden>
+                        <button type="submit">Xac nhận <i class="far fa-check-circle fa-2x"></i></button>
+                        </form>
                         <button>In Đơn <i class="fas fa-print fa-2x"></i></button>
                       
                     </div>
+
 
                 </div>
                 <div class="frames4-2">
