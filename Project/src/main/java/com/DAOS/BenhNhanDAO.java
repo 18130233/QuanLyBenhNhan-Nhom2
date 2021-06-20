@@ -87,7 +87,8 @@ public class BenhNhanDAO {
         cn = ConnectionDB.getConnection();
         BenhNhan benhnhan = new BenhNhan();
         try {
-            ps = cn.prepareStatement("select * from benhnhan where(maBenhNhan=" + id + ");");
+            ps = cn.prepareStatement("select * from benhnhan where maBenhNhan like ?");
+            ps.setString(1,id);
             rs = ps.executeQuery();
             while (rs.next()) {
                 benhnhan.setMaBenhNhan(rs.getString("maBenhNhan"));
