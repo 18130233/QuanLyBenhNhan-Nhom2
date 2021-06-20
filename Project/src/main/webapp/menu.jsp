@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <form method="get" action="TiepNhanBenhNhanController">
-                        <button class="btn">Tiếp nhận bệnh nhân</button>
+                        <button name = "Tiepnhanbenhnhan" value="tiepnhan" class="btn">Tiếp nhận bệnh nhân</button>
                         </form>
                     </div>
                     <div class="col-md-4">
