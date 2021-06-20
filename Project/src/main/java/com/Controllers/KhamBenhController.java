@@ -1,17 +1,33 @@
 package com.Controllers;
 
+import com.DAOS.BenhNhanDAO;
+import com.DAOS.ThuocDAO;
 import com.Models.BenhNhan;
+import com.Models.Thuoc;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @WebServlet(name = "KhamBenhController", urlPatterns = "/KhamBenhController")
 public class KhamBenhController extends HttpServlet {
+    ArrayList<BenhNhan> danhSachBenhNhan = new ArrayList<>();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        BenhNhan benhNhanChiDinh = new BenhNhan();
+        String maPhongKham = request.getParameter("phongkham");
+        String maKhamBenh = getMaKhamBenhByIdBenhNhan(request.getParameter("maBenhNhan"));
+        benhNhanChiDinh = getBenhNhanByMaKhamBenh(maKhamBenh);
+        ArrayList<Thuoc> danhSachThuoc = getDanhSachThuocByMaKhamBenh(maKhamBenh);
+        benhNhanChiDinh.setDanhSachThuoc(danhSachThuoc);
+        danhSachBenhNhan = getDanhSachBenhNhanTheoPhongKham(maPhongKham);
+        request.setAttribute("maKhamBenh", maKhamBenh);
+        request.setAttribute("benhNhan",benhNhanChiDinh);
+        request.setAttribute("phongKham",maPhongKham);
+        request.setAttribute("listBenhNhan",danhSachBenhNhan);
         request.getRequestDispatcher("khambenh.jsp").forward(request,response);
     }
 
@@ -22,17 +38,29 @@ public class KhamBenhController extends HttpServlet {
 
 // Main function and method
 
-    public BenhNhan getBenhNhanById(String id){
-//code here
-        return null;
+    public ArrayList<Thuoc> getDanhSachThuocByMaKhamBenh(String maKhamBenh){
+        ThuocDAO thuocDAO = new ThuocDAO();
+      return  thuocDAO.getThuocByMaKhamBenh(maKhamBenh);
     }
 
-    public ArrayList<BenhNhan> getDanhSachBenhNhan(){
-//        Code here
-        return  null;
+    public String getMaKhamBenhByIdBenhNhan(String id){
+        BenhNhanDAO benhNhanDAO = new BenhNhanDAO();
+        return benhNhanDAO.getMaKhamBenh(id);
     }
-    public void themTrieuChung(String idBenhNhan, String trieuChung){
-//        Code here
+
+    public BenhNhan getBenhNhanByMaKhamBenh(String id){
+        BenhNhanDAO benhNhanDAO = new BenhNhanDAO();
+        return benhNhanDAO.getBenhNhanByMaKhamBenh(id);
+
+    }
+
+    public ArrayList<BenhNhan> getDanhSachBenhNhanTheoPhongKham(String maHangDoi){
+        BenhNhanDAO benhNhanDAO = new BenhNhanDAO();
+        return benhNhanDAO.getDanhSachBenhNhanTheoPhongKham(maHangDoi);
+    }
+    public void themTrieuChung(String maKhamBenh, String trieuChung){
+        BenhNhanDAO benhNhanDAO = new BenhNhanDAO();
+        benhNhanDAO.updateTrieuChung(maKhamBenh,trieuChung);
     }
     public void keThuoc(){
 //        Code here

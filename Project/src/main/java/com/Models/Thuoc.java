@@ -20,8 +20,7 @@ public class Thuoc {
 
     //main function and method
     public int getTongTienThuoc(){
-        //Code here
-        return 0;
+        return this.giaBan*this.soLuong;
     }
 
 

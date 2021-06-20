@@ -63,18 +63,12 @@ CREATE TABLE Thuoc(
 );
 
 CREATE TABLE HoaDonThuoc(
- maHDThuoc varchar(10),
- maBenhNhan varchar(10),
- tongTien nvarchar(50),
- PRIMARY KEY( maHDThuoc)
-);
-CREATE TABLE ChiTietThuoc(
- maHDThuoc varchar(10),
- FOREIGN KEY (maHDThuoc) REFERENCES HoaDonThuoc(maHDThuoc),
+ maKhamBenh varchar(10),
  maThuoc varchar(10),
  soLuong int,
- PRIMARY KEY( maHDThuoc, maThuoc)
+ FOREIGN KEY (maThuoc) REFERENCES Thuoc(maThuoc)
 );
+
 CREATE TABLE DichVu(
  maDichVu varchar(10),
  tenDichVu nvarchar(100),
@@ -83,19 +77,10 @@ CREATE TABLE DichVu(
  PRIMARY KEY( maDichVu)
 );
 CREATE TABLE HoaDonDichVu(
- maHDDichVu varchar(10),
- maBenhNhan nvarchar(10),
- tongTien real,
- PRIMARY KEY( maHDDichVu)
-);
-CREATE TABLE ChiTietDichVu(
- maHDDichVu varchar(10) ,
- FOREIGN KEY (maHDDichVu) REFERENCES HoaDonDichVu(maHDDichVu),
+ maKhamBenh nvarchar(10),
  maDichVu varchar(10) ,
  FOREIGN KEY (maDichVu) REFERENCES DichVu(maDichVu),
- soLuong int,
- ketQua nvarchar(100),
- PRIMARY KEY( maHDDichVu, maDichVu)
+ soLuong int
 );
 
 
@@ -108,9 +93,6 @@ CREATE TABLE KhamBenh(
  trieuChung nvarchar(100),
  chuanDoan nvarchar(100),
  tienSu nvarchar(100),
- maHDDichVu varchar(10),
- maHDThuoc varchar(10),
- FOREIGN KEY (maHDThuoc) REFERENCES HoaDonThuoc(maHDThuoc),
  maHangDoi varchar(10),
  PRIMARY KEY( maKhamBenh)
 );
