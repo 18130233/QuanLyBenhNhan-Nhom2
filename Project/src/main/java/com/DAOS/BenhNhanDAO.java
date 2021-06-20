@@ -9,6 +9,7 @@ import com.Models.Thuoc;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class BenhNhanDAO {
@@ -95,8 +96,8 @@ public class BenhNhanDAO {
                 benhnhan.setDienThoai(rs.getNString("dienThoai"));
                 return benhnhan;
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         benhnhan.setMaBenhNhan(id);
         return benhnhan;
@@ -131,8 +132,8 @@ public class BenhNhanDAO {
             }
             ps.close();
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         //cho stt cho benh nhan
         int stt = gennerateID("select * from cthangdoi where (maHangDoi = '" + maHangDoi + "')");
@@ -172,9 +173,8 @@ public class BenhNhanDAO {
                 boolean x = ps.execute();
                 System.out.println("insert benhnhan: "+x);
                 return true;
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-                return false;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         } else if (succeedChecked == -1) {
             int idBenhNhan = gennerateID("select * from benhnhan");
@@ -188,9 +188,8 @@ public class BenhNhanDAO {
                 boolean x = ps.execute();
                 System.out.println("insert benhnhan:" +x);
                 return true;
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-                return false;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
         return false;
