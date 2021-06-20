@@ -33,14 +33,9 @@ public class BenhNhan {
         this.phongKham = phongKham;
     }
     public BenhNhan(){
-
+        this.danhSachThuoc = new ArrayList<>();
+        this.danhSachDichVu = new ArrayList<>();
     }
-    //main function and method
-
-    public void updateTrieuChung(String trieuChung){
-//        Code here
-    }
-
 
 
     //Getter and setter

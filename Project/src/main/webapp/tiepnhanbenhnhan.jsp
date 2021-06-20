@@ -69,10 +69,10 @@
                             <div class="col-md-4">
                                 Phòng khám</div>
                             <div class="col-md-4"> <select Name="assign" Size="Number_of_options">  
-                                <option value="Ngoai"> Ngoại khoa </option>  
-                                <option value="Noi"> Nội khoa </option>  
-                                <option value="Mat"> Khoa mắt </option>  
-                                <option value="Rang"> Khoa răng </option>  
+                                <option value="pk1"> Ngoại khoa </option>
+                                <option value="pk2"> Nội khoa </option>
+                                <option value="pk3"> Khoa mắt </option>
+                                <option value="pk4"> Khoa răng </option>
                               </select> </div>
                             <div class="col-md-2"></div>
                         </div>
