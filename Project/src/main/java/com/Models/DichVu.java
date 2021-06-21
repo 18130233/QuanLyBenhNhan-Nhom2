@@ -7,6 +7,15 @@ public class DichVu {
     int giaBan;
     int soLuong;
     String ketQua;
+    public DichVu(String tenDichVu, String donVi, int giaBan, int soLuong) {
+  		super();
+  		this.tenDichVu = tenDichVu;
+  		this.donVi = donVi;
+  		this.soLuong = soLuong;
+  		this.giaBan = giaBan;
+  		
+  	
+  	}
 
     public DichVu(String maDichVu, String tenDichVu, String donVi, int giaBan, int soLuong, String ketQua) {
         this.maDichVu = maDichVu;
@@ -67,4 +76,9 @@ public class DichVu {
     public void setKetQua(String ketQua) {
         this.ketQua = ketQua;
     }
+    @Override
+	public String toString() {
+		return "DichVu [tenDichVu=" + tenDichVu + ", donVi=" + donVi + ", giaBan=" + giaBan + ", soLuong=" + soLuong
+				+ "]";
+	}
 }

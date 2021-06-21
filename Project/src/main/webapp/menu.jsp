@@ -40,8 +40,8 @@
                         </form>
                     </div>
                     <div class="col-md-4">
-                        <form method="get" action="ThanhToanController">
-                            <button class="btn">Thanh Toán</button>
+                        <form method="get"  action="searchID">
+                            <button name="action" value="list" class="btn">Thanh Toán</button>
                         </form>
                     </div>
 

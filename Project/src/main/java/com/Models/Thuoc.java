@@ -7,6 +7,15 @@ public class Thuoc {
     int giaBan;
     int soLuong;
     String cachDung;
+    
+    public Thuoc(String tenThuoc, String donVi, int soLuong, int giaBan, String cachDung) {
+		super();
+		this.tenThuoc = tenThuoc;
+		this.donVi = donVi;
+		this.soLuong = soLuong;
+		this.giaBan = giaBan;
+		this.cachDung = cachDung;
+	}
 
     public Thuoc(String maThuoc, String tenThuoc, String donVi, int giaBan, int soLuong, String cachDung) {
         this.maThuoc = maThuoc;
@@ -72,4 +81,9 @@ public class Thuoc {
     public void setCachDung(String cachDung) {
         this.cachDung = cachDung;
     }
+	@Override
+	public String toString() {
+		return "Thuoc [ tenThuoc=" + tenThuoc + ", donVi=" + donVi + ", giaBan=" + giaBan
+				+ ", soLuong=" + soLuong + ", cachDung=" + cachDung + "]";
+	}
 }
