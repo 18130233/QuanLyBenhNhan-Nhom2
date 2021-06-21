@@ -32,6 +32,16 @@ public class BenhNhan {
         this.dauHieuSinhTon = dauHieuSinhTon;
         this.phongKham = phongKham;
     }
+    //
+    public BenhNhan(String maBenhNhan, String tenBenhNhan,  String trieuChung,String chuanDoan, String tienSu) {
+		super();
+		this.maBenhNhan = maBenhNhan;
+		this.tenBenhNhan = tenBenhNhan;
+		this.trieuChung = trieuChung;
+		this.chuanDoan = chuanDoan;
+		
+		this.tienSu = tienSu;
+	}
     public BenhNhan(){
         this.danhSachThuoc = new ArrayList<>();
         this.danhSachDichVu = new ArrayList<>();
