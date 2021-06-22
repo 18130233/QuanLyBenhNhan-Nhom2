@@ -21,6 +21,7 @@ public class KhamBenhController extends HttpServlet {
         String maPhongKham = request.getParameter("phongkham");
         String maKhamBenh = getMaKhamBenhByIdBenhNhan(request.getParameter("maBenhNhan"));
         benhNhanChiDinh = getBenhNhanByMaKhamBenh(maKhamBenh);
+        log(benhNhanChiDinh.getMaBenhNhan());
         ArrayList<Thuoc> danhSachThuoc = getDanhSachThuocByMaKhamBenh(maKhamBenh);
         benhNhanChiDinh.setDanhSachThuoc(danhSachThuoc);
         danhSachBenhNhan = getDanhSachBenhNhanTheoPhongKham(maPhongKham);
