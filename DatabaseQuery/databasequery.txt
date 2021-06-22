@@ -94,6 +94,7 @@ CREATE TABLE KhamBenh(
  chuanDoan nvarchar(100),
  tienSu nvarchar(100),
  maHangDoi varchar(10),
+ ngayKham varchar(20),
  PRIMARY KEY( maKhamBenh)
 );
 CREATE TABLE HoaDon(
@@ -102,6 +103,44 @@ CREATE TABLE HoaDon(
  tongTien real,
  PRIMARY KEY( maHD)
 );
+
+INSERT INTO benhnhan VALUES ("BN-1", "Ngô Thị Mỹ Linh", "70 Võ Văn Ngân TP.Thủ Đức", "0372928356");
+INSERT INTO benhnhan VALUES ("BN-2", "Nguyễn Thị Kim Liên", "890 Linh Chiểu TP.Thủ Đức", "0342988109");
+INSERT INTO benhnhan VALUES ("BN-3", "Huỳnh Văn Lý", "180 Chương Dương TP.Thủ Đức", "0372927600");
+INSERT INTO benhnhan VALUES ("BN-4", "Đỗ Ngọc Kỳ Duyên", "56 Tô Vĩnh Diện TP.Thủ Đức", "0362818512");
+INSERT INTO benhnhan VALUES ("BN-5", "Phan Mạnh Hải", "240 Phạm Văn Đồng Hiệp Bình Chánh TP.Thủ Đức", "0352828317");
+INSERT INTO benhnhan VALUES ("BN-6", "Võ Nguyễn Quỳnh Hương", "179 Võ Văn Ngân TP.Thủ Đức", "0322828323");
+INSERT INTO benhnhan VALUES ("BN-7", "Châu Khánh", "80 Tô Vĩnh Diện TP.Thủ Đức", "0311928309");
+INSERT INTO benhnhan VALUES ("BN-8", "Võ Diệp Hoài Tú", "50 Hoàng Diệu2 TP.Thủ Đức", "0347628397");
+INSERT INTO benhnhan VALUES ("BN-9", "Võ Thị Kim Thanh", "67 Linh Xuân TP.Thủ Đức", "0333528396");
+INSERT INTO benhnhan VALUES ("BN-10", "Nguyễn Lý Thanh Thanh", "345 Kha Vạn Cân TP.Thủ Đức", "0372928374");
+
+
+
+INSERT INTO bacsi VALUES ("BS-1", "Nguyễn Văn Huấn","Ngoại");
+INSERT INTO bacsi VALUES ("BS-2", "Huỳnh Văn Tuấn","Ngoại");
+INSERT INTO bacsi VALUES ("BS-3", "Nguyễn Hải Nam","Nội");
+INSERT INTO bacsi VALUES ("BS-4", "Châu Gia Dĩ","Nội");
+INSERT INTO bacsi VALUES ("BS-5", "Nguyễn Thị Thẩm","Mắt");
+INSERT INTO bacsi VALUES ("BS-6", "Hồ Văn Cường","Mắt");
+INSERT INTO bacsi VALUES ("BS-7", "Nguyễn Thị Phi Nhung","Răng");
+INSERT INTO bacsi VALUES ("BS-8", "Huỳnh Quốc Cường","Răng");
+
+
+INSERT INTO phongkham VALUES ("pk1", "Ngoai");
+INSERT INTO phongkham VALUES ("pk2", "Noi");
+INSERT INTO phongkham VALUES ("pk3", "Mat");
+INSERT INTO phongkham VALUES ("pk4", "Rang");
+
+INSERT INTO ctphongkham VALUES ("CTPK-1","pk1","BS-1",7,4);
+INSERT INTO ctphongkham VALUES ("CTPK-2","pk2","BS-3",7,4);
+INSERT INTO ctphongkham VALUES ("CTPK-3","pk3","BS-6",7,4);
+INSERT INTO ctphongkham VALUES ("CTPK-4","pk4","BS-8",7,4);
+
+INSERT INTO hangdoi VALUES ("HD-1","pk1");
+INSERT INTO hangdoi VALUES ("HD-2","pk2");
+INSERT INTO hangdoi VALUES ("HD-3","pk3");
+INSERT INTO hangdoi VALUES ("HD-4","pk4");
 
 
 

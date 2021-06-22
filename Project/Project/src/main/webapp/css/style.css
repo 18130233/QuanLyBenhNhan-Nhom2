@@ -1,0 +1,250 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    line-height: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    width: 1360px;
+    min-width: 1300px;
+    margin: 0;
+}
+
+header {
+    background-color: royalblue;
+    width: 100%;
+    height: 30px;
+}
+
+.header {
+    text-align: center;
+    padding: 10px;
+    color: whitesmoke;
+}
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.container .column__left {
+    width: 27%;
+    border: solid 0.5px #403b4073;
+    height: 100vh;
+}
+
+.container .column__left .column__left-frames1 {
+    padding: 10px;
+    background-color: #44bfef;
+}
+
+.container .column__left .column__left-frames1 .frames1-row1 {
+    padding-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.container .column__left .column__left-frames1 .frames1-row1 .frames1-row1-button1 {
+    margin-left: 5px;
+}
+
+.container .column__left .column__left-frames1 .frames1-row2 {
+    padding-bottom: 10px;
+}
+
+.container .column__left .column__left-frames2 {
+    background-color: #eee;
+    width: 100%;
+    height: 700px;
+    border: 1px dotted black;
+    overflow: scroll;
+}
+
+.container .column__left .column__left-frames2 .frames2 table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.container .column__left .column__left-frames2 .frames2 td,
+.container .column__left .column__left-frames2 .frames2 th {
+    border: 1px solid #403b4073;
+    text-align: left;
+    padding: 8px;
+}
+
+.container .column__right {
+    width: 72%;
+    border: solid 0.5px #403b4073;
+    height: 100vh;
+}
+
+.container .column__right .column__right-frames1 {
+    padding: 5px;
+    padding-left: 20px;
+    height: 280px;
+    border: solid 2px #403b4073;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-1 {
+    width: 720px;
+    border: solid 2px #403b4073;
+    height: 100%;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-1 .column__right-frames1-1-row1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-1 .column__right-frames1-1-row2 {
+    padding-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-1 .column__right-frames1-1-row3 {
+    padding-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-1 .column__right-frames1-1-row4 {
+    padding-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-1 .column__right-frames1-1-row5 {
+    padding-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-1 .column__right-frames1-1-row6 {
+    padding-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-2 {
+    width: 250px;
+    border: solid 2px #403b4073;
+    height: 100%;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-2 .frames1-2-row1 {
+    padding-top: 10px;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-2 .frames1-2-row2 {
+    padding-top: 10px;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-2 .frames1-2-row3 {
+    padding-top: 10px;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-2 .frames1-2-row4 {
+    padding-top: 10px;
+}
+
+.container .column__right .column__right-frames1 .column__right-frames1-2 .frames1-2-row5 {
+    padding-top: 10px;
+}
+
+.container .column__right .column__right-frames2 table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.container .column__right .column__right-frames2 td,
+.container .column__right .column__right-frames2 th {
+    border: 1px solid #403b4073;
+    text-align: left;
+    padding: 8px;
+}
+
+.container .column__right .column__right-frames3 {
+    margin-top: 20px;
+}
+
+.container .column__right .column__right-frames3 table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.container .column__right .column__right-frames3 td,
+.container .column__right .column__right-frames3 th {
+    border: 1px solid #403b4073;
+    text-align: left;
+    padding: 8px;
+}
+
+.container .column__right .column__right-frames4 {
+    height: 150px;
+    border: solid 0.5px #403b4073;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.container .column__right .column__right-frames4 .frames4-1 {
+    width: 400px;
+    border: solid 0.5px #403b4073;
+    height: 100%;
+}
+
+.container .column__right .column__right-frames4 .frames4-1 button {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    background-color: darkcyan;
+}
+
+.container .column__right .column__right-frames4 .frames4-2 .frames4-2-row1 {
+    padding-top: 5px;
+}
+
+.container .column__right .column__right-frames4 .frames4-2 .frames4-2-row2 {
+    padding-top: 10px;
+}
+
+.container .column__right .column__right-frames4 .frames4-2 .frames4-2-row3 {
+    padding-top: 10px;
+}
+
+
+/*# sourceMappingURL=style.css.map */

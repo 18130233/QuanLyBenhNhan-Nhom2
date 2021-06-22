@@ -43,15 +43,6 @@ public class BenhNhan {
 		this.tienSu = tienSu;
 	}
     public BenhNhan(){
- 	this.maBenhNhan = "";
-        this.tenBenhNhan = "";
-        this.ngayKham = new Date();
-        this.diaChi = "";
-        this.dienThoai = "";
-        this.chuanDoan = "";
-        this.trieuChung = "";
-        this.tienSu = "";
-        this.phongKham = new PhongKham();
         this.danhSachThuoc = new ArrayList<>();
         this.danhSachDichVu = new ArrayList<>();
     }
