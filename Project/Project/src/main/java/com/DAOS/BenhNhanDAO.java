@@ -128,8 +128,7 @@ public class BenhNhanDAO {
         String maCTPhongKham = "";
         try {
             cn = ConnectionDB.getConnection();
-            ps = cn.prepareStatement("select * from hangdoi inner join (phongkham INNER JOIN ctphongkham on phongkham.maPhongKham=ctphongkham.maPhongKham) on hangdoi.maPhongKham = phongkham.maPhongKham where tenPhongKham like ?");
-            ps.setString(1,benhNhan.getPhongKham().getTenPhongKham());
+            ps = cn.prepareStatement("select * from hangdoi inner join (phongkham INNER JOIN ctphongkham on phongkham.maPhongKham=ctphongkham.maPhongKham) on hangdoi.maPhongKham = phongkham.maPhongKham where(tenPhongKham='" + benhNhan.getPhongKham().getTenPhongKham() + "')");
             rs = ps.executeQuery();
             while (rs.next()) {
                 maHangDoi = rs.getString("mahangdoi");
@@ -147,7 +146,7 @@ public class BenhNhanDAO {
             count = count + 1;
         }
         //them báº£ng chi tiáº¿t hÃ ng Ä‘á»£i xong
-        String maKhamBenh = "KB-"+gennerateID("select * from khambenh");
+        String maKhamBenh = gennerateID("select * from khambenh") + "";
         //ma benh nhan
         String mabenhnhan = benhNhan.getMaBenhNhan();
         System.out.println("-----"+mabenhnhan);
@@ -183,11 +182,11 @@ public class BenhNhanDAO {
                 e.printStackTrace();
             }
         } else if (succeedChecked == -1) {
-            String idBenhNhan = "BN-"+gennerateID("select * from benhnhan");
-            benhNhan.setMaBenhNhan(idBenhNhan);
+            int idBenhNhan = gennerateID("select * from benhnhan");
+            benhNhan.setMaBenhNhan(idBenhNhan + "");
             try {
                 ps = cn.prepareStatement("INSERT INTO benhnhan(maBenhNhan, tenBenhNhan, diaChi, dienThoai) VALUES (?, ?, ?, ?);");
-                ps.setString(1, idBenhNhan);
+                ps.setString(1, idBenhNhan + "");
                 ps.setString(2, benhNhan.getTenBenhNhan());
                 ps.setString(3, benhNhan.getDiaChi());
                 ps.setString(4, benhNhan.getDienThoai());
