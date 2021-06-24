@@ -17,6 +17,8 @@ public class BenhNhanDAO {
 	static ConnectionDB currentcon;
 	static ResultSet rs = null;
 	private java.sql.PreparedStatement pstmt = null;
+
+
     public void updateTrieuChung(String maKhamBenh, String trieuChung){
         Connection con = null;
         PreparedStatement preparedStatement = null;

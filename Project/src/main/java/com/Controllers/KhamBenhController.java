@@ -63,7 +63,4 @@ public class KhamBenhController extends HttpServlet {
         BenhNhanDAO benhNhanDAO = new BenhNhanDAO();
         benhNhanDAO.updateTrieuChung(maKhamBenh,trieuChung);
     }
-    public void keThuoc(){
-//        Code here
-    }
 }

@@ -104,19 +104,6 @@ CREATE TABLE HoaDon(
  PRIMARY KEY( maHD)
 );
 
-INSERT INTO benhnhan VALUES ("BN-1", "Ngô Thị Mỹ Linh", "70 Võ Văn Ngân TP.Thủ Đức", "0372928356");
-INSERT INTO benhnhan VALUES ("BN-2", "Nguyễn Thị Kim Liên", "890 Linh Chiểu TP.Thủ Đức", "0342988109");
-INSERT INTO benhnhan VALUES ("BN-3", "Huỳnh Văn Lý", "180 Chương Dương TP.Thủ Đức", "0372927600");
-INSERT INTO benhnhan VALUES ("BN-4", "Đỗ Ngọc Kỳ Duyên", "56 Tô Vĩnh Diện TP.Thủ Đức", "0362818512");
-INSERT INTO benhnhan VALUES ("BN-5", "Phan Mạnh Hải", "240 Phạm Văn Đồng Hiệp Bình Chánh TP.Thủ Đức", "0352828317");
-INSERT INTO benhnhan VALUES ("BN-6", "Võ Nguyễn Quỳnh Hương", "179 Võ Văn Ngân TP.Thủ Đức", "0322828323");
-INSERT INTO benhnhan VALUES ("BN-7", "Châu Khánh", "80 Tô Vĩnh Diện TP.Thủ Đức", "0311928309");
-INSERT INTO benhnhan VALUES ("BN-8", "Võ Diệp Hoài Tú", "50 Hoàng Diệu2 TP.Thủ Đức", "0347628397");
-INSERT INTO benhnhan VALUES ("BN-9", "Võ Thị Kim Thanh", "67 Linh Xuân TP.Thủ Đức", "0333528396");
-INSERT INTO benhnhan VALUES ("BN-10", "Nguyễn Lý Thanh Thanh", "345 Kha Vạn Cân TP.Thủ Đức", "0372928374");
-
-
-
 INSERT INTO bacsi VALUES ("BS-1", "Nguyễn Văn Huấn","Ngoại");
 INSERT INTO bacsi VALUES ("BS-2", "Huỳnh Văn Tuấn","Ngoại");
 INSERT INTO bacsi VALUES ("BS-3", "Nguyễn Hải Nam","Nội");
@@ -141,6 +128,14 @@ INSERT INTO hangdoi VALUES ("HD-1","pk1");
 INSERT INTO hangdoi VALUES ("HD-2","pk2");
 INSERT INTO hangdoi VALUES ("HD-3","pk3");
 INSERT INTO hangdoi VALUES ("HD-4","pk4");
+
+INSERT INTO THUOC VALUES("T-1","Penicilin","Viên",10000,"1 Ngày 1 viên");
+INSERT INTO THUOC VALUES("T-2","Insulin","Viên",15000,"1 Ngày 1 viên");
+INSERT INTO THUOC VALUES("T-3","Morphin","Gói",30000,"Pha nước, 1 ngày 1 gói");
+INSERT INTO THUOC VALUES("T-4","Aspirin","Viên",20000,"2 Ngày 1 viên");
+INSERT INTO THUOC VALUES("T-5","Chlorpromazin","Viên",50000,"2 Ngày 1 viên");
+INSERT INTO THUOC VALUES("T-6","Ether","Viên",10000,"1 Ngày 2 viên");
+
 
 
 

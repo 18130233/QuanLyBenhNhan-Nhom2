@@ -34,7 +34,7 @@
                         <tr>
                           <th>Mã bệnh nhân</th>
                           <th>Họ và Tên</th>
-                          <th>Tuổi</th>
+                          <th>Điện Thoại<th>
                         </tr>
                         </thead>
 
