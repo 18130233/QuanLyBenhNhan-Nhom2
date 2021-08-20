@@ -622,7 +622,7 @@ public String getMaKhamBenh(String benhNhanId){
 //Test
     public static void main(String[] args) {
         BenhNhanDAO c = new BenhNhanDAO();
-        System.out.println(c.getMaKhamBenh("bn4"));
+        c.updateTrieuChung("KB-1","abc");
     }
 
 

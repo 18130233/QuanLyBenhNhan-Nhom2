@@ -103,10 +103,25 @@ public class ThuocDAO {
             e.printStackTrace();
         }
     }
+    public void deleteThuoc(String maKhambenh, String maThuoc){
+        Connection con = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        try{
+            con = ConnectionDB.getConnection();
+            String sql = "DELETE FROM hoadonthuoc WHERE mathuoc =? and makhambenh = ?";
+            preparedStatement = con.prepareStatement(sql);
+            preparedStatement.setString(1,maThuoc);
+            preparedStatement.setString(2,maKhambenh);
+            preparedStatement.execute();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     public static void main(String[] args) {
         ThuocDAO thuocDAO = new ThuocDAO();
-        System.out.println(thuocDAO.getThuocByMaKhamBenh("kb1").get(2).getTenThuoc());
+       thuocDAO.deleteThuoc("KB-1","T-1");
 
     }
 }

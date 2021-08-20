@@ -20,11 +20,20 @@ public class KhamBenhController extends HttpServlet {
         BenhNhan benhNhanChiDinh = new BenhNhan();
         String maPhongKham = request.getParameter("phongkham");
         String maKhamBenh = getMaKhamBenhByIdBenhNhan(request.getParameter("maBenhNhan"));
+        String trieuChung = request.getParameter("trieuChung");
+        String xoaThuoc = request.getParameter("xoaThuoc");
+        if(xoaThuoc != ""){
+            deleteThuoc(maKhamBenh,xoaThuoc);
+        }
         benhNhanChiDinh = getBenhNhanByMaKhamBenh(maKhamBenh);
         log(benhNhanChiDinh.getMaBenhNhan());
         ArrayList<Thuoc> danhSachThuoc = getDanhSachThuocByMaKhamBenh(maKhamBenh);
         benhNhanChiDinh.setDanhSachThuoc(danhSachThuoc);
         danhSachBenhNhan = getDanhSachBenhNhanTheoPhongKham(maPhongKham);
+        if (trieuChung != "") {
+            themTrieuChung(maKhamBenh,trieuChung);
+            benhNhanChiDinh.setTrieuChung(trieuChung);
+        }
         request.setAttribute("maKhamBenh", maKhamBenh);
         request.setAttribute("benhNhan",benhNhanChiDinh);
         request.setAttribute("phongKham",maPhongKham);
@@ -38,6 +47,10 @@ public class KhamBenhController extends HttpServlet {
     }
 
 // Main function and method
+    public void deleteThuoc(String maKhamBenh, String maThuoc){
+        ThuocDAO thuocDAO = new ThuocDAO();
+        thuocDAO.deleteThuoc(maKhamBenh,maThuoc);
+    }
 
     public ArrayList<Thuoc> getDanhSachThuocByMaKhamBenh(String maKhamBenh){
         ThuocDAO thuocDAO = new ThuocDAO();

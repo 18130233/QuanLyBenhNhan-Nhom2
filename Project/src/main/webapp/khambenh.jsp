@@ -55,11 +55,12 @@
         </div>
         <div class="column__right">
             <div class="column__right-frames1">
-
+    <form action="KhamBenhController" method="get">
                 <div class="column__right-frames1-1">
                     <div class="column__right-frames1-1-row1">
+                        <input type="hidden" value="${phongKham}" name="phongkham">
                         <label for="">Mã bệnh nhân</label>
-                        <input type="text" value="${benhNhan.maBenhNhan}" style="width: 100px;">
+                        <input type="text" value="${benhNhan.maBenhNhan}" name="maBenhNhan" style="width: 100px;">
                         <label for="">Ngày</label>
                         <input type="text" style="width: 150px;">
                         
@@ -80,7 +81,7 @@
                         <label for="">Chẩn đoán</label>
                         <input type="text" value="${benhNhan.chuanDoan}" style="width: 200px; margin-right: 53px;">
                         <label for="">Triệu chứng</label>
-                        <input type="text"  value="${benhNhan.trieuChung}"style="width: 200px;">
+                        <input type="text"  value="${benhNhan.trieuChung}" name="trieuChung" style="width: 200px;">
                     </div>
                     <div class="column__right-frames1-1-row6">
 
@@ -89,12 +90,13 @@
                     </div>
                     <div class="column__right-frames1-1-row7">
                        <a style="" href="ThemThuocController?phongkham=${phongKham}&maKhamBenh=${maKhamBenh}&maBenhNhan=${benhNhan.maBenhNhan}"> Thêm thuốc </a>
-                        <button style="margin-left: 500px"> Lưu <i class="far fa-save fa-2x"></i></button>
+                        <button style="margin-left: 500px" type="submit"> Lưu <i class="far fa-save fa-2x"></i></button>
                     </div>
 
                     
         
                 </div>
+    </form>
                 <div class="column__right-frames1-2">
                     <label for="">Dấu hiệu sinh tồn</label>
                     <div class="frames1-2-row1" >
@@ -136,17 +138,24 @@
                       <th>Giá bán</th>
                       <th>Cách dùng</th>
                       <th>Tổng</th>
+                        <th> Xóa </th>
                     </tr>
                     <c:forEach items="${benhNhan.getDanhSachThuoc()}" var="thuoc">
+                    <form action="KhamBenhController" method="get">
                     <tr>
+                        <input type="hidden" value="${phongKham}" name="phongkham">
+                        <input type="hidden" value="${benhNhan.maBenhNhan}" name="maBenhNhan">
+                        <input type="hidden" value="${thuoc.getMaThuoc()}" name="xoaThuoc">
                       <td>${thuoc.getTenThuoc()}</td>
                       <td>${thuoc.getDonVi()}</td>
                       <td>${thuoc.getSoLuong()}</td>
                       <td>${thuoc.getGiaBan()} VNĐ</td>
                       <td>${thuoc.getCachDung()}</td>
                       <td>${thuoc.getTongTienThuoc()} VNĐ</td>
+                        <td><button type="submit">Xóa</button></td>
                         </c:forEach>
-                    </tr>
+                    </tr
+                    </form>
                   </table>
 
             </div>
