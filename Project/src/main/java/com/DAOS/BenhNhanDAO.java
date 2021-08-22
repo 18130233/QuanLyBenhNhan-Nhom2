@@ -98,9 +98,9 @@ public class BenhNhanDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 benhnhan.setMaBenhNhan(rs.getString("maBenhNhan"));
-                benhnhan.setTenBenhNhan(rs.getNString("tenBenhNhan"));
-                benhnhan.setDiaChi(rs.getNString("diaChi"));
-                benhnhan.setDienThoai(rs.getNString("dienThoai"));
+                benhnhan.setTenBenhNhan(rs.getString("tenBenhNhan"));
+                benhnhan.setDiaChi(rs.getString("diaChi"));
+                benhnhan.setDienThoai(rs.getString("dienThoai"));
                 return benhnhan;
             }
         } catch (Exception e) {
