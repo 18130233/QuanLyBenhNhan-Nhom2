@@ -121,7 +121,7 @@ public class ThuocDAO {
 
     public static void main(String[] args) {
         ThuocDAO thuocDAO = new ThuocDAO();
-       thuocDAO.deleteThuoc("KB-1","T-1");
+        System.out.println(thuocDAO.getToanBoThuoc());
 
     }
 }

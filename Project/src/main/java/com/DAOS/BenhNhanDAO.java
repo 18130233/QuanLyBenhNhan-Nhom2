@@ -25,7 +25,7 @@ public class BenhNhanDAO {
         ResultSet rs = null;
         try{
             con = ConnectionDB.getConnection();
-            String sql = "update khambenh set trieuchung = ? where maKhamBenh like ?";
+            String sql = "update KhamBenh set trieuChung = ? where maKhamBenh like ?";
             preparedStatement = con.prepareStatement(sql);
             preparedStatement.setString(1,trieuChung);
             preparedStatement.setString(2,maKhamBenh);
@@ -43,7 +43,7 @@ public class BenhNhanDAO {
         ResultSet rs = null;
         try{
             con = ConnectionDB.getConnection();
-            String sql = "select * from khambenh where makhambenh like ?";
+            String sql = "select * from KhamBenh where maKhamBenh like ?";
             preparedStatement = con.prepareStatement(sql);
             preparedStatement.setString(1,id);
             rs = preparedStatement.executeQuery();
@@ -93,7 +93,7 @@ public class BenhNhanDAO {
         cn = ConnectionDB.getConnection();
         BenhNhan benhnhan = new BenhNhan();
         try {
-            ps = cn.prepareStatement("select * from benhnhan where maBenhNhan like ?");
+            ps = cn.prepareStatement("select * from BenhNhan where maBenhNhan like ?");
             ps.setString(1,id);
             rs = ps.executeQuery();
             while (rs.next()) {
@@ -130,11 +130,11 @@ public class BenhNhanDAO {
         String maCTPhongKham = "";
         try {
             cn = ConnectionDB.getConnection();
-            ps = cn.prepareStatement("select * from hangdoi inner join (phongkham INNER JOIN ctphongkham on phongkham.maPhongKham=ctphongkham.maPhongKham) on hangdoi.maPhongKham = phongkham.maPhongKham where tenPhongKham like ?");
+            ps = cn.prepareStatement("select * from HangDoi inner join (PhongKham INNER JOIN CTPhongKham on PhongKham.maPhongKham=CTPhongKham.maPhongKham) on HangDoi.maPhongKham = PhongKham.maPhongKham where tenPhongKham like ?");
             ps.setString(1,benhNhan.getPhongKham().getTenPhongKham());
             rs = ps.executeQuery();
             while (rs.next()) {
-                maHangDoi = rs.getString("mahangdoi");
+                maHangDoi = rs.getString("maHangDoi");
                 System.out.println(maHangDoi);
                 maCTPhongKham = rs.getString("maCTPhongKham");
             }
@@ -144,12 +144,12 @@ public class BenhNhanDAO {
             e.printStackTrace();
         }
         //cho stt cho benh nhan
-        int stt = gennerateID("select * from cthangdoi where (maHangDoi = '" + maHangDoi + "')");
+        int stt = gennerateID("select * from CTHangDoi where (maHangDoi = '" + maHangDoi + "')");
         if (insertDataInCTHangDoi(maHangDoi, benhNhan.getMaBenhNhan(), stt)) {
             count = count + 1;
         }
         //them báº£ng chi tiáº¿t hÃ ng Ä‘á»£i xong
-        String maKhamBenh = "KB-"+gennerateID("select * from khambenh");
+        String maKhamBenh = "KB-"+gennerateID("select * from KhamBenh");
         //ma benh nhan
         String mabenhnhan = benhNhan.getMaBenhNhan();
         System.out.println("-----"+mabenhnhan);
@@ -173,7 +173,7 @@ public class BenhNhanDAO {
         cn = ConnectionDB.getConnection();
         if (succeedChecked == 0) {
             try {
-                ps = cn.prepareStatement("INSERT INTO benhnhan(maBenhNhan, tenBenhNhan, diaChi, dienThoai) VALUES (?, ?, ?, ?);");
+                ps = cn.prepareStatement("INSERT INTO BenhNhan(maBenhNhan, tenBenhNhan, diaChi, dienThoai) VALUES (?, ?, ?, ?);");
                 ps.setString(1, benhNhan.getMaBenhNhan());
                 ps.setString(2, benhNhan.getTenBenhNhan());
                 ps.setString(3, benhNhan.getDiaChi());
@@ -185,10 +185,10 @@ public class BenhNhanDAO {
                 e.printStackTrace();
             }
         } else if (succeedChecked == -1) {
-            String idBenhNhan = "BN-"+gennerateID("select * from benhnhan");
+            String idBenhNhan = "BN-"+gennerateID("select * from BenhNhan");
             benhNhan.setMaBenhNhan(idBenhNhan);
             try {
-                ps = cn.prepareStatement("INSERT INTO benhnhan(maBenhNhan, tenBenhNhan, diaChi, dienThoai) VALUES (?, ?, ?, ?);");
+                ps = cn.prepareStatement("INSERT INTO BenhNhan(maBenhNhan, tenBenhNhan, diaChi, dienThoai) VALUES (?, ?, ?, ?);");
                 ps.setString(1, idBenhNhan);
                 ps.setString(2, benhNhan.getTenBenhNhan());
                 ps.setString(3, benhNhan.getDiaChi());
@@ -208,7 +208,7 @@ public class BenhNhanDAO {
         PreparedStatement ps = null;
         cn = ConnectionDB.getConnection();
         try {
-            ps = cn.prepareStatement("INSERT INTO khambenh(maBenhNhan, maKhamBenh, maCTPhongKham,trieuChung,chuanDoan,tienSu,maHangDoi,ngayKham) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            ps = cn.prepareStatement("INSERT INTO KhamBenh(maBenhNhan, maKhamBenh, maCTPhongKham,trieuChung,chuanDoan,tienSu,maHangDoi,ngayKham) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, maBenhNhan);
             ps.setString(2, maKhamBenh);
             ps.setString(3, maCTPhongKham);
@@ -218,7 +218,7 @@ public class BenhNhanDAO {
             ps.setString(7, maHangDoi);
             ps.setString(8, ngayKham);
             boolean x = ps.execute();
-            System.out.println("insert khambenh:"+x);
+            System.out.println("insert KhamBenh:"+x);
            return true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -231,7 +231,7 @@ public class BenhNhanDAO {
         PreparedStatement ps = null;
         cn = ConnectionDB.getConnection();
         try {
-            ps = cn.prepareStatement("INSERT INTO cthangdoi(maHangDoi, maBenhNhan, stt) VALUES (?, ?, ?);");
+            ps = cn.prepareStatement("INSERT INTO CTHangDoi(maHangDoi, maBenhNhan, stt) VALUES (?, ?, ?);");
             ps.setString(1, maHangDoi);
             ps.setString(2, maBenhNhan);
             ps.setInt(3, stt);
@@ -274,7 +274,7 @@ public class BenhNhanDAO {
        try {
            String maHangDoi = getMaHangDoiFrom(maPhongKham);
             con = ConnectionDB.getConnection();
-            String sql = "select * from cthangdoi where mahangdoi like ?";
+            String sql = "select * from CTHangDoi where maHangDoi like ?";
             preparedStatement = con.prepareStatement(sql);
             preparedStatement.setString(1,maHangDoi);
             rs = preparedStatement.executeQuery();
@@ -322,7 +322,7 @@ public class BenhNhanDAO {
   	BenhNhan benhnhan = null;
   
   	java.sql.Connection connect=ConnectionDB.getConnection();
-  	String sql="select * from benhnhan where maBenhNhan = ?";
+  	String sql="select * from BenhNhan where maBenhNhan = ?";
   	if (connect!=null) {
   		try {
 				pstmt=connect.prepareStatement(sql);
@@ -360,7 +360,7 @@ public class BenhNhanDAO {
 		//        Code here
     	java.sql.Connection connect=ConnectionDB.getConnection();
     	ArrayList<BenhNhan> result=new ArrayList<BenhNhan>();
-    	String sql="select * from benhnhan";
+    	String sql="select * from BenhNhan";
     	if (connect!=null) {
     		try {
 				pstmt=connect.prepareStatement(sql);
@@ -390,7 +390,7 @@ public class BenhNhanDAO {
 		//        Code here
     	java.sql.Connection connect=ConnectionDB.getConnection();
     	ArrayList<BenhNhan> result=new ArrayList<BenhNhan>();
-    	String sql="select benhnhan.* from cthangdoi join benhnhan where cthangdoi.maBenhNhan=benhnhan.maBenhNhan";
+    	String sql="select BenhNhan.* from CTHangDoi join BenhNhan where CTHangDoi.maBenhNhan=BenhNhan.maBenhNhan";
     	if (connect!=null) {
     		try {
 				pstmt=connect.prepareStatement(sql);
@@ -438,7 +438,7 @@ public class BenhNhanDAO {
   	BenhNhan bn = null;
   
   	java.sql.Connection connect=ConnectionDB.getConnection();
-  	String sql="select khambenh.maBenhNhan,benhnhan.tenBenhNhan,khambenh.trieuChung,khambenh.chuanDoan ,khambenh.tienSu from khambenh join benhnhan on khambenh.maBenhNhan=benhnhan.maBenhNhan where benhnhan.maBenhNhan=?";
+  	String sql="select KhamBenh.maBenhNhan,BenhNhan.tenBenhNhan,KhamBenh.trieuChung,KhamBenh.chuanDoan ,KhamBenh.tienSu from KhamBenh join BenhNhan on KhamBenh.maBenhNhan=BenhNhan.maBenhNhan where BenhNhan.maBenhNhan=?";
   	if (connect!=null) {
   		try {
 				pstmt=connect.prepareStatement(sql);
@@ -475,7 +475,7 @@ public class BenhNhanDAO {
   	String maKB="";
   
   	java.sql.Connection connect=ConnectionDB.getConnection();
-  	String sql="SELECT  maKhamBenh from khambenh where maBenhNhan = ?";
+  	String sql="SELECT  maKhamBenh from KhamBenh where maBenhNhan = ?";
   	if (connect!=null) {
   		try {
 				pstmt=connect.prepareStatement(sql);
@@ -508,7 +508,7 @@ public class BenhNhanDAO {
   	
   
   	java.sql.Connection connect=ConnectionDB.getConnection();
-  	String sql="select thuoc.tenThuoc,thuoc.donVi,hoadonthuoc.soLuong,thuoc.giaBan,thuoc.cachDung from hoadonthuoc join thuoc on thuoc.maThuoc=hoadonthuoc.maThuoc where maKhamBenh= ?";
+  	String sql="select Thuoc.tenThuoc,Thuoc.donVi,HoaDonThuoc.soLuong,Thuoc.giaBan,Thuoc.cachDung from HoaDonThuoc join Thuoc on Thuoc.maThuoc=HoaDonthuoc.maThuoc where maKhamBenh= ?";
   	if (connect!=null) {
   		try {
 				pstmt=connect.prepareStatement(sql);
@@ -554,7 +554,7 @@ public class BenhNhanDAO {
   	
   
   	java.sql.Connection connect=ConnectionDB.getConnection();
-  	String sql="select  dichvu.tenDichVu,dichvu.donVi,hoadondichvu.soLuong,dichvu.giaBan from dichvu join hoadondichvu on dichvu.maDichVu=hoadondichvu.maDichVu where maKhamBenh=?";
+  	String sql="select  DichVu.tenDichVu,DichVu.donVi,HoaDonDichVu.soLuong,DichVu.giaBan from DichVu join HoaDonDichVu on DichVu.maDichVu=HoaDonDichVu.maDichVu where maKhamBenh=?";
   	if (connect!=null) {
   		try {
 				pstmt=connect.prepareStatement(sql);
@@ -603,7 +603,7 @@ public String getMaKhamBenh(String benhNhanId){
     try{
 
         con =  ConnectionDB.getConnection();
-        String sql= "select kb.MaKhamBenh from Khambenh kb join  CtHangDoi ct on kb.Mahangdoi = ct.mahangdoi where ct.mabenhnhan like ? and kb.mabenhnhan like ? ";
+        String sql= "select kb.MaKhamBenh from KhamBenh kb join  CTHangDoi ct on kb.maHangDoi = ct.maHangDoi where ct.maBenhNhan like ? and kb.maBenhNhan like ? ";
         preparedStatement = con.prepareStatement(sql);
         preparedStatement.setString(1,benhNhanId);
         preparedStatement.setString(2,benhNhanId);
@@ -622,7 +622,7 @@ public String getMaKhamBenh(String benhNhanId){
 //Test
     public static void main(String[] args) {
         BenhNhanDAO c = new BenhNhanDAO();
-        c.updateTrieuChung("KB-1","abc");
+
     }
 
 
